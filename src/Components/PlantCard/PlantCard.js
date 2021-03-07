@@ -6,6 +6,7 @@ const PlantCard = () => {
 
   return (
     <article className='plant-card'>
+      
     </article>
   )
 }

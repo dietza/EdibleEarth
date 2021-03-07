@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import PlantCard from '../PlantCard/PlantCard';
 import './Container.css';
 
-const Container = () => {
+const Container = ({ ediblePlants, isLoading }) => {
 
   return (
     <section className='plants-container'>

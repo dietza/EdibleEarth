@@ -21,11 +21,43 @@ class App extends Component {
     }
   }
 
-  return (
-    <div className="App">
-      
-    </div>
-  );
+  render = () => {
+    return (
+      <div className="App">
+        
+      <MainHeading />
+
+      {/* {this.state.isLoading && !this.state.error &&
+        <h2 className="loading">Loading...</h2>} */}
+
+        <Switch>
+
+          <Route exact path='/'
+            render = {() => {
+              return this.state.error !== "" ? 
+                (<>
+                  <h2 className="error-message">{this.state.error}</h2>
+                </>) :
+                (<Container 
+                ediblePlants={this.state.ediblePlants}
+                isLoading={this.state.isLoading}/>)
+              }}
+            />
+
+          <Route path='/:id' 
+            render = {( {match} ) => { 
+              return (
+              <PlantDetails />
+                )
+            }}/>
+
+        </Switch>
+
+      <Footer />
+
+      </div>
+    );
+  }
 }
 
 export default App;

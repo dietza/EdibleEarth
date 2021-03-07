@@ -6,13 +6,29 @@ class SearchBar extends Component {
   constructor({  }) {
     super()
     this.state = {
-      searchInputs: '',
+      searchInput: '',
     }
+  }
+
+  handleSearch = (event) => {
+    this.setState({
+      searchInput: event.target.value
+    })
   }
 
   render = () => {
     return (
-      
+      <form role="search" autoComplete="off">
+      <input
+        className="search-input"
+        type="text"
+        placeholder="Search plants by name..."
+        name="plants-search"
+        aria-label="plants-search-input"
+        value={this.state.searchInput}
+        onChange={(event) => this.handleSearch(event)}
+      />
+    </form>
     )
   }
 
