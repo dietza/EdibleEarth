@@ -2,10 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './SearchBar.css';
 
-const SearchBar = () => {
-  return (
+class SearchBar extends Component {
+  constructor({  }) {
+    super()
+    this.state = {
+      searchInputs: '',
+    }
+  }
 
-  )
+  render = () => {
+    return (
+      
+    )
+  }
+
 }
 
 SearchBar.propTypes = {
