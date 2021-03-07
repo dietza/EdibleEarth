@@ -9,7 +9,8 @@ import PlantDetails from '../PlantDetails/PlantDetails';
 import DetailsView from '../DetailsView/DetailsView';
 import './App.css';
 
-function App() {
+const App = () => {
+
   return (
     <div className="App">
       
