@@ -9,7 +9,17 @@ import PlantDetails from '../PlantDetails/PlantDetails';
 import DetailsView from '../DetailsView/DetailsView';
 import './App.css';
 
-const App = () => {
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      allPlants: [],
+      ediblePlants: [],
+      selectedPlantID: null,
+      isLoading: true,
+      error: ''
+    }
+  }
 
   return (
     <div className="App">
