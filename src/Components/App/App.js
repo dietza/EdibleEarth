@@ -6,7 +6,6 @@ import Footer from '../Footer/Footer';
 import Container from '../Container/Container';
 import PlantCard from '../PlantCard/PlantCard';
 import PlantDetails from '../PlantDetails/PlantDetails';
-import DetailsView from '../DetailsView/DetailsView';
 import './App.css';
 
 class App extends Component {
