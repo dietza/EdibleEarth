@@ -58,6 +58,12 @@ class App extends Component {
     })
   }
 
+  toggleSelection = (targetPlantID) => {
+    this.setState({
+      selectedPlantID: targetPlantID,
+     })
+  }
+
   render = () => {
     return (
       <main>
@@ -80,12 +86,14 @@ class App extends Component {
                filteredPlants={this.state.filteredPlants}/>)
              }}
            />
-​          <Route path='/:id' 
-           render = {( {match} ) => { 
-             return (
-             <PlantDetails />
-               )
-           }}/>
+
+          <Route path='/:id' 
+            render={( {match} ) => { 
+              return <PlantDetails 
+              selectedPlantID={match.params.id}
+              switchView={this.toggleSelection}/>
+            }}/>
+
 ​        </Switch>
 
       <Footer updatePage={ this.updatePage }/>
