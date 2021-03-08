@@ -25,7 +25,6 @@ class App extends Component {
   componentDidMount = () => {
     fetchAllPlantsByPage(1)
       .then(plants => this.setState({ allPlants: plants.data, isLoading: false }))
-      .then(() => console.log('FETCHED PLANTS DATA', this.state.allPlants))
       .catch(error => this.setState({ error: `Uh oh! There was an error - 
       ${error}. Please try again!` }))
   }
