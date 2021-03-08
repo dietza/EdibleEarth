@@ -2,13 +2,23 @@ import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 import './PlantDetails.css';
+import { fetchAllPlantsByPage } from '../../fetchAPI';
 
-const PlantDetails = ({  }) => {
+class PlantDetails extends Component {
+  constructor({  }) {
+    super()
+    this.state = {
 
-  return (
-    <>
-    </>
-  )
+    }
+  }
+
+
+  render() {
+    return (
+      <>
+      </>
+    )
+  }
 }
 
 // PlantDetails.propTypes = {
