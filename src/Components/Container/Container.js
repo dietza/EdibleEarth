@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import PlantCard from '../PlantCard/PlantCard';
 import './Container.css';
 
-const Container = ({ ediblePlants }) => {
+const Container = ({ allPlants }) => {
 
-  console.log('PLANTS in CONTAINER >>>>>>>', ediblePlants)
+  console.log('PLANTS in CONTAINER >>>>>>>', allPlants)
 
   let plantsToDisplay;
 
@@ -16,20 +16,20 @@ const Container = ({ ediblePlants }) => {
 
       return (
         <>
-        {/* // <Link  */}
-        {/* //   to={`/${plant.id}`} 
-        //   key={plant.id} 
-        // > */}
+        <Link 
+          to={`/${plant.id}`} 
+          key={plant.id} 
+          >
           <PlantCard 
             info={plant}
           />
-        {/* // </Link> */}
+        </Link>
         </>
       )
     })
   }
 
-  createPlantCards(ediblePlants);
+  createPlantCards(allPlants);
 
   return (
     <section className='plants-container'>
