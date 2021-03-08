@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './SearchBar.css';
 
 class SearchBar extends Component {
-  constructor({  }) {
+  constructor({ filterPlants }) {
     super()
     this.state = {
       searchInput: '',
@@ -14,6 +14,7 @@ class SearchBar extends Component {
     this.setState({
       searchInput: event.target.value
     })
+    this.props.filterPlants(event.target.value)
   }
 
   render = () => {
@@ -22,7 +23,7 @@ class SearchBar extends Component {
       <input
         className="search-input"
         type="text"
-        placeholder="Search plants by name..."
+        placeholder="Search plants by common name..."
         name="plants-search"
         aria-label="plants-search-input"
         value={this.state.searchInput}

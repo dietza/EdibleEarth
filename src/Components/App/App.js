@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import MainHeading from '../MainHeading/MainHeading';
 import SearchBar from '../SearchBar/SearchBar';
 import Footer from '../Footer/Footer';
@@ -13,36 +13,67 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      allPlants: [1,2,3],
+      allPlants: [],
       ediblePlants: [],
+      filteredPlants: [],
       selectedPlantID: null,
       isLoading: true,
       error: ''
     }
   }
 
-
   componentDidMount = () => {
-    fetchAllPlantsByPage()
-      // .then(plants => console.log('PLANTS DATA WTF', plants.data))
+    fetchAllPlantsByPage(1)
       .then(plants => this.setState({ allPlants: plants.data, isLoading: false }))
       .catch(error => this.setState({ error: `Uh oh! There was an error - 
       ${error}. Please try again!` }))
   }
 
+  filterPlants = (searchTerm) => {
+    const allPlants = this.state.allPlants;
+    const filteredPlants = allPlants.filter(plant => {
+      const searchCommonName = plant.common_name.toLowerCase()
+      return searchCommonName.includes(searchTerm.toLowerCase())
+    })
 
+    this.setState({
+      filteredPlants: filteredPlants,
+    })
+  }
 
   render = () => {
     return (
-      <div className="App">
+      <main>
         
-      <MainHeading />
+      <MainHeading 
+      filterPlants={ this.filterPlants }/>
 
-      <Container ediblePlants={ this.state.allPlants }/>
+      {this.state.isLoading && !this.state.error &&
+      <h2 className="loading">Loading...</h2>}
+
+​        <Switch>
+​          <Route exact path='/'
+           render = {() => {
+             return (!this.isLoading && this.state.error !== "") ? 
+               (<>
+​                  <h3 className="error-message">{this.state.error}</h3>
+​                </>) :
+               (<Container 
+               allPlants={this.state.allPlants}
+               filteredPlants={this.state.filteredPlants}/>)
+             }}
+           />
+​          <Route path='/:id' 
+           render = {( {match} ) => { 
+             return (
+             <PlantDetails />
+               )
+           }}/>
+​        </Switch>
 
       <Footer />
 
-      </div>
+      </main>
     );
   }
 }
