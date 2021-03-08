@@ -12,12 +12,18 @@ footer {
   padding: 1rem;
 }
 
-button {
-  background-color: #014140;
-  border: 1pt solid black;
-  border-radius: 0.35rem;
-  color: white;
+button { 
+  display: flex;
+  align-items: center;
+  background-color: rgba(1, 65, 64, 0.5);
+  font-size: 1.5rem;
+  font-weight: 400;
   font-size: 16px;
+  color: whitesmoke;
+  border: 2pt solid black;
+  border-radius: 3rem;
+  margin-left: .5rem;
+  padding: 0.5rem;
 }
 
 button:focus {
@@ -25,4 +31,12 @@ button:focus {
   transition: all 0.4s ease 0s;
   cursor: pointer;
   border-radius: 0.35rem;
+}
+
+.right-arrow-icon {
+  background-color: transparent;
+  color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: .5rem;
 }

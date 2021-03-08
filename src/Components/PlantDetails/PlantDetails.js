@@ -39,7 +39,6 @@ class PlantDetails extends Component {
           <h1>Plant info about</h1>
           {/* <h1>Plant info about {`${plantToDisplay.common_name}`}</h1> */}
         </section>}
-
         
         <Link to='/' className='back-to-home-btn'>
           <button className='back-to-home-btn' onClick={this.clearID}>

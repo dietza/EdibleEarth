@@ -29,9 +29,6 @@ class App extends Component {
 
   fetchPlantsByPage = () => {
     let pageNum = this.state.pageNum;
-
-    console.log('pageNum in fetch >>>>>', this.state.pageNum)
-
     return fetchAllPlantsByPage(pageNum)
       .then(plants => this.setState({ allPlants: plants.data, isLoading: false }))
       .catch(error => this.setState({ error: `Uh oh! There was an error - 
@@ -56,6 +53,12 @@ class App extends Component {
     this.setState({
       filteredPlants: filteredPlants,
     })
+
+    if (searchTerm === '') {
+      this.setState({
+        filteredPlants: [],
+      })
+    }
   }
 
   toggleSelection = (targetPlantID) => {
@@ -96,7 +99,13 @@ class App extends Component {
 
 ​        </Switch>
 
-      <Footer updatePage={ this.updatePage }/>
+
+      {!this.state.isLoading && 
+        !this.state.error && 
+        this.state.allPlants.length > 1 &&
+        this.state.filteredPlants.length === 0 &&
+        <Footer updatePage={ this.updatePage }/>}
+      {/* <Footer updatePage={ this.updatePage }/> */}
 
       </main>
     );
