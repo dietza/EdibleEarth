@@ -1,0 +1,7 @@
+.plants-container {
+  width: 95vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0;
+}

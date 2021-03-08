@@ -15,17 +15,16 @@ const Container = ({ ediblePlants }) => {
     plantsToDisplay = plants.map(plant => {
 
       return (
-
-        <h2>Testing Container</h2>
-
-        // <Link 
-        //   to={`/${plant.id}`} 
+        <>
+        {/* // <Link  */}
+        {/* //   to={`/${plant.id}`} 
         //   key={plant.id} 
-        // >
-        //   <PlantCard 
-        //     info={plant}
-        //   />
-        // </Link>
+        // > */}
+          <PlantCard 
+            info={plant}
+          />
+        {/* // </Link> */}
+        </>
       )
     })
   }
