@@ -23,8 +23,8 @@ class App extends Component {
 
 
   componentDidMount = () => {
-    fetchAllPlantsByPage()
-      // .then(plants => console.log('PLANTS DATA WTF', plants.data))
+    fetchAllPlantsByPage(1)
+      .then(plants => console.log('FETCHED PLANTS DATA', plants.data))
       .then(plants => this.setState({ allPlants: plants.data, isLoading: false }))
       .catch(error => this.setState({ error: `Uh oh! There was an error - 
       ${error}. Please try again!` }))
@@ -38,7 +38,7 @@ class App extends Component {
         
       <MainHeading />
 
-      <Container ediblePlants={ this.state.allPlants }/>
+      <Container allPlants={ this.state.allPlants }/>
 
       <Footer />
 
