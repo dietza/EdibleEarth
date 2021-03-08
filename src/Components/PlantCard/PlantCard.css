@@ -1,9 +1,16 @@
+a {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
 .plant-card {
   width: 14rem;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: transparent;
   color: #014140;
   border: 2pt solid #014140;
   border-radius: 1rem;
@@ -19,8 +26,9 @@
 
 .plant-card-image {
   width: 14rem;
-  height: 20vh;
+  height: 14rem;
   object-fit: cover;
   border: 2pt solid #014140;
   border-radius: 50%;
+  margin: 1rem;
 }
