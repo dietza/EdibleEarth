@@ -13,6 +13,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
+      pageNum: 1,
       allPlants: [],
       ediblePlants: [],
       filteredPlants: [],
@@ -23,10 +24,26 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetchAllPlantsByPage(1)
+    this.fetchPlantsByPage();
+  }
+
+  fetchPlantsByPage = () => {
+    let pageNum = this.state.pageNum;
+
+    console.log('pageNum in fetch >>>>>', this.state.pageNum)
+
+    return fetchAllPlantsByPage(pageNum)
       .then(plants => this.setState({ allPlants: plants.data, isLoading: false }))
       .catch(error => this.setState({ error: `Uh oh! There was an error - 
       ${error}. Please try again!` }))
+  }
+  
+  updatePage = () => {
+    let pageNum = this.state.pageNum;
+    this.setState({
+      pageNum: pageNum + 1
+    })
+    this.fetchPlantsByPage();
   }
 
   filterPlants = (searchTerm) => {
@@ -71,7 +88,7 @@ class App extends Component {
            }}/>
 ​        </Switch>
 
-      <Footer />
+      <Footer updatePage={ this.updatePage }/>
 
       </main>
     );

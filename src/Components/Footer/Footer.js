@@ -2,11 +2,11 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import './Footer.css';
 
-const Footer = () => {
+const Footer = ({ updatePage }) => {
 
   return (
     <footer className="footer">
-      <h3>Footer text</h3>
+      <button onClick={updatePage}> Next Page ⇢ </button>
     </footer>
   )
 }
