@@ -15,12 +15,12 @@ class App extends Component {
     this.state = {
       allPlants: [],
       ediblePlants: [],
+      filteredPlants: [],
       selectedPlantID: null,
       isLoading: true,
       error: ''
     }
   }
-
 
   componentDidMount = () => {
     fetchAllPlantsByPage(1)
@@ -30,13 +30,24 @@ class App extends Component {
       ${error}. Please try again!` }))
   }
 
+  filterPlants = (searchTerm) => {
+    const allPlants = this.state.allPlants;
+    const filteredPlants = allPlants.filter(plant => {
+      const searchCommonName = plant.common_name.toLowerCase()
+      return searchCommonName.includes(searchTerm.toLowerCase())
+    })
 
+    this.setState({
+      filteredPlants: filteredPlants,
+    })
+  }
 
   render = () => {
     return (
       <main>
         
-      <MainHeading />
+      <MainHeading 
+      filterPlants={ this.filterPlants }/>
 
       {this.state.isLoading && !this.state.error &&
       <h2 className="loading">Loading...</h2>}
@@ -49,7 +60,8 @@ class App extends Component {
 ​                  <h3 className="error-message">{this.state.error}</h3>
 ​                </>) :
                (<Container 
-               allPlants={this.state.allPlants}/>)
+               allPlants={this.state.allPlants}
+               filteredPlants={this.state.filteredPlants}/>)
              }}
            />
 ​          <Route path='/:id' 

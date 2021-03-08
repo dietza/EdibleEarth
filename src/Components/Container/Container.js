@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import PlantCard from '../PlantCard/PlantCard';
 import './Container.css';
 
-const Container = ({ allPlants }) => {
-
-  console.log('PLANTS in CONTAINER >>>>>>>', allPlants)
+const Container = ({ allPlants, filteredPlants }) => {
 
   let plantsToDisplay;
 
@@ -29,7 +27,11 @@ const Container = ({ allPlants }) => {
     })
   }
 
-  createPlantCards(allPlants);
+  if (filteredPlants.length !== 0) {
+    createPlantCards(filteredPlants)
+  } else {
+    createPlantCards(allPlants)
+  }
 
   return (
     <section className='plants-container'>
