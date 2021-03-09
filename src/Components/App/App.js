@@ -35,9 +35,10 @@ class App extends Component {
   updatePage = () => {
     let pageNum = this.state.pageNum;
     this.setState({
-      pageNum: pageNum + 1
+      pageNum: pageNum + 1,
+      isLoading: true
     })
-    this.fetchPlantsByPage();
+    this.fetchPlantsByPage(pageNum);
   }
 
   resetToPreviousPage = () => {
@@ -69,7 +70,7 @@ class App extends Component {
   switchView = (targetPlantID) => {
     this.setState({
       selectedPlantID: targetPlantID,
-      filteredPlants: []
+      filteredPlants: this.state.allPlants
      })
   }
 
