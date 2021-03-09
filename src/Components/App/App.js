@@ -41,9 +41,10 @@ class App extends Component {
     this.fetchPlantsByPage();
   }
 
-  resetPage = () => {
+  resetToPreviousPage = () => {
+    let pageNum = this.state.pageNum;
     this.setState({
-      pageNum: 1
+      pageNum: pageNum - 1
     })
     this.fetchPlantsByPage();
   }
@@ -114,7 +115,7 @@ class App extends Component {
         this.state.filteredPlants.length === 0 &&
         <Footer 
         updatePage={ this.updatePage }
-        resetPage={ this.resetPage }
+        resetPage={ this.resetToPreviousPage }
         switchView={this.switchView}/>}
 
       </main>
