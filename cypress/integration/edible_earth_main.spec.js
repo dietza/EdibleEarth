@@ -1,4 +1,4 @@
-describe('Rowdy Taters main page view', () => {
+describe('EdibleEarth main view', () => {
 
   const baseUrl = 'http://localhost:4002/'
 
@@ -30,7 +30,7 @@ describe('Rowdy Taters main page view', () => {
 
   it ('Should show the site header when the main page is loaded', () => {
     cy
-      .get('header .heading-title').contains('EdibleEarth') 
+      .get('header .heading-title').should('contain', 'EdibleEarth') 
   });
 
   it ('Should show the site footer, containing a button to return to the previous page', () => {
@@ -45,12 +45,34 @@ describe('Rowdy Taters main page view', () => {
       .find('.details__next-button').should('contain', 'Next Page')
   });
 
-  it ('Should display the first page of cards ', () => {
+  it ('Should display the first page of cards on load', () => {
     cy
     .get('.plants-container')
     .find('a .plant-card').should('have.length', 20)
   });
 
+  it ('Each plant card should display an image',  () => {
+    cy
+      .get('.plants-container')
+      .find('.narrowleaf-plantain-card img').should('have.attr', 'src', 'https://bs.plantnet.org/image/o/78a8374f009e6ed2dc71ca17d18e4271ea0a2a7b')
+  });
 
+  it ('Each card image should have a descriptive alt tag',  () => {
+    cy
+      .get('.plants-container')
+      .find('.narrowleaf-plantain-card img').should('have.attr', 'alt', 'Plantago lanceolata known as Narrowleaf plantain')
+  });
+
+  it ('Each plant card should display the plant\'s common name',  () => {
+    cy
+      .get('.plants-container')
+      .find('.narrowleaf-plantain-card .card-details .plant-common-name').should('contain', 'Narrowleaf plantain')
+  });
+
+  it ('Each plant card should display the plant\'s scientific name',  () => {
+    cy
+      .get('.plants-container')
+      .find('.narrowleaf-plantain-card .card-details .plant-scientific-name').should('contain', 'Plantago lanceolata')
+  });
 
 })
