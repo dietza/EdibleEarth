@@ -21,7 +21,7 @@ const Footer = ({ updatePage, resetPage, switchView }) => {
         {'Previous Page'}
         </button>
       </Link>
-      <button 
+      <button className='details__next-button'
         onClick={updatePage}>
         {'Next Page'}
         <img src={forwardArrow} alt='right arrow icon'

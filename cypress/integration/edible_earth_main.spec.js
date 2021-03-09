@@ -8,6 +8,7 @@ describe('Rowdy Taters main page view', () => {
     .then((mockPlantsData) => {
       cy.intercept('GET', 'http://localhost:4000/plants/1', {
         statusCode: 200,
+        // delay: 100,
         body: mockPlantsData
       })
     })
@@ -16,6 +17,7 @@ describe('Rowdy Taters main page view', () => {
   });
 
   it ('Should show a loading status until plant cards are created', () => {
+    //uncomment the delay in intercept to see this test pass if loading too fast
     cy
       .get('.loading').should('contain', 'Loading')
       .should('be.visible')
@@ -24,6 +26,23 @@ describe('Rowdy Taters main page view', () => {
   it ('Should have the correct url for the main page on load', () => {
     cy
       .url().should('eq', `${baseUrl}`)
+  });
+
+  it ('Should show the site header when the main page is loaded', () => {
+    cy
+      .get('header .heading-title').contains('EdibleEarth') 
+  });
+
+  it ('Should show the site footer, containing a button to return to the previous page', () => {
+    cy
+      .get('footer').should('be.visible')
+      .find('.details__back-button').should('contain', 'Previous Page')
+  });
+
+  it ('Should show the site footer, containing a button to advance to the next page', () => {
+    cy
+      .get('footer').should('be.visible')
+      .find('.details__next-button').should('contain', 'Next Page')
   });
 
 })
