@@ -2,11 +2,17 @@
   font-family: 'Monserrat',
   sans-serif;
   text-decoration: none;
-  color: white;
-  background-color: rgba(245, 245, 245, 0.5);
+  background-color: transparent;
 }
 
 html {
+  background-attachment: fixed;
+  background-image: url('../src/assets/horiz-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: none;
+  padding: none;
   margin: 0;
 }
 
@@ -29,4 +35,10 @@ h2,
 h3, 
 p {
   background-color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    background-image: url('../src/assets/vert-background.jpg');
+  }
 }
