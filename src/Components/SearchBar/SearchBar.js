@@ -4,7 +4,7 @@ import './SearchBar.css';
 
 class SearchBar extends Component {
   constructor({ filterPlants }) {
-    super({ filterPlants })
+    super()
     this.state = {
       searchInput: '',
     }

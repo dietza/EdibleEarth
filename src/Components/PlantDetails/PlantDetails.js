@@ -6,7 +6,7 @@ import { fetchPlantDetails } from '../../fetchAPI';
 
 class PlantDetails extends Component {
   constructor({ selectedPlantID, switchView }) {
-    super({ selectedPlantID, switchView })
+    super()
     this.state = {
       selectedPlantID: selectedPlantID,
       plantToDisplay: {},
