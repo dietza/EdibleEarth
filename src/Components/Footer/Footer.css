@@ -1,5 +1,6 @@
 footer {  
   width: 100vw;
+  max-height: 5vh;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
@@ -7,21 +8,25 @@ footer {
   position: fixed;
   bottom: 0;
   right: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #014140;
   border: 2pt solid black;
   margin-top: 3rem;
   padding: 1rem;
 }
 
 button { 
+  width: 10rem;
+  max-height: 2.5rem;
   display: flex;
   align-items: center;
-  background-color: rgba(1, 65, 64, 0.5);
+  background-color: rgba(1, 65, 64, 1);
   font-size: 1.5rem;
   font-weight: 400;
   font-size: 16px;
   color: whitesmoke;
   border: 2pt solid black;
-  border-radius: 3rem;
+  border-radius: 5rem;
   margin-left: .5rem;
   padding: 0.5rem;
 }
@@ -35,7 +40,6 @@ button:focus {
 
 .right-arrow-icon {
   background-color: transparent;
-  color: white;
   width: 1.5rem;
   height: 1.5rem;
   padding: .5rem;

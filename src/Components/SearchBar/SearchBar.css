@@ -1,4 +1,8 @@
 .search-input {
-  width: 10rem;
+  width: 20rem;
   height: auto;
+  background-color: whitesmoke;
+  border-radius: 0.35rem;
+  font-size: 18px;
+  text-align-last: center;
 }
