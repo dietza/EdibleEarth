@@ -45,4 +45,12 @@ describe('Rowdy Taters main page view', () => {
       .find('.details__next-button').should('contain', 'Next Page')
   });
 
+  it ('Should display the first page of cards ', () => {
+    cy
+    .get('.plants-container')
+    .find('a .plant-card').should('have.length', 20)
+  });
+
+
+
 })
