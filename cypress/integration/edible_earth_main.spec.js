@@ -4,12 +4,12 @@ describe('Rowdy Taters main page view', () => {
 
   before(() => {
     cy
-    .fixture('plantsData.json')
-    .then((mockPlantsData) => {
+    .fixture('mockPlantainData.json')
+    .then((mockPlantainData) => {
       cy.intercept('GET', 'http://localhost:4000/plants/1', {
         statusCode: 200,
         // delay: 100,
-        body: mockPlantsData
+        body: mockPlantainData
       })
     })
     
