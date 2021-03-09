@@ -2,13 +2,11 @@
 
 **EdibleEarth** is an application designed to help users find out whether or not plants are safe to eat.
 
-
 ## Usage
 
 Users can visit the site and view the collection of plants in the database, page by page. Users can use the search bar to look up plants by common name, or simply scroll through the plants, then use the `Next Page` and `Previous Page`navigation buttons to browse.
 
 ![813A19A6-08A5-4640-94E9-89F6145AE0FF_1_105_c](https://user-images.githubusercontent.com/64617223/110484963-63abda00-80a8-11eb-9ec7-eac91e9b55e7.jpeg)
-![8AD4A92A-BF43-4739-BF3F-7AD07EACF722](https://user-images.githubusercontent.com/64617223/110484994-6d354200-80a8-11eb-88f7-8f5ab70f1358.jpeg)
 
 Users can click on a plant to see find out whether it is edible or not. A new page should load with details about the selected plant, prominitely displaying whether it is considered safe to eat. After viewing the details for the selected plant, the user can navigate back by clicking the `Previous Page` button to get to the main view.
 
@@ -39,6 +37,8 @@ Data used in this project was accessed from the [Trefle API](https://trefle.io/)
 - While `Pagination` is not yet incorporated, finding a workable solution to making the API calls by each page and updating that to display effectively felt like a successful answer to the challenge of the API's request settings.
 - On change search functionality
 - Basic Responsive Design
+
+![8AD4A92A-BF43-4739-BF3F-7AD07EACF722](https://user-images.githubusercontent.com/64617223/110484994-6d354200-80a8-11eb-88f7-8f5ab70f1358.jpeg)
 
 ## Technologies Used
 1. React
