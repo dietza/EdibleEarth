@@ -1,0 +1,43 @@
+{
+  "data": {
+      "id": 131982,
+      "common_name": "woodland strawberry",
+      "slug": "fragaria-vesca",
+      "scientific_name": "Fragaria vesca",
+      "main_species_id": 137615,
+      "image_url": "https://bs.plantnet.org/image/o/a3b43a0cf8694059cdb2ae6630b7d412f1d676f9",
+      "year": 1753,
+      "bibliography": "Sp. Pl.: 494 (1753)",
+      "author": "L.",
+      "family_common_name": "Rose family",
+      "genus_id": 2585,
+      "observations": "Macaronesia, Europe to Siberia and NW. China",
+      "vegetable": false,
+      "links": {
+          "self": "/api/v1/plants/fragaria-vesca",
+          "species": "/api/v1/plants/fragaria-vesca/species",
+          "genus": "/api/v1/genus/fragaria"
+      },
+      "main_species": {
+          "id": 137615,
+          "common_name": "Woodland strawberry",
+          "slug": "fragaria-vesca",
+          "scientific_name": "Fragaria vesca",
+          "year": 1753,
+          "bibliography": "Sp. Pl.: 494 (1753)",
+          "author": "L.",
+          "status": "accepted",
+          "rank": "species",
+          "family_common_name": "Rose family",
+          "genus_id": 2585,
+          "observations": "Macaronesia, Europe to Siberia and NW. China",
+          "vegetable": false,
+          "image_url": "https://bs.plantnet.org/image/o/a3b43a0cf8694059cdb2ae6630b7d412f1d676f9",
+          "genus": "Fragaria",
+          "family": "Rosaceae",
+          "duration": null,
+          "edible_part": null,
+          "edible": false
+      }
+  }
+}

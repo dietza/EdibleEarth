@@ -1,0 +1,43 @@
+{
+  "data": {
+      "id": 162255,
+      "common_name": "narrowleaf plantain",
+      "slug": "plantago-lanceolata",
+      "scientific_name": "Plantago lanceolata",
+      "main_species_id": 167888,
+      "image_url": "https://bs.plantnet.org/image/o/78a8374f009e6ed2dc71ca17d18e4271ea0a2a7b",
+      "year": 1753,
+      "bibliography": "Sp. Pl.: 113 (1753)",
+      "author": "L.",
+      "family_common_name": "Plantain family",
+      "genus_id": 5418,
+      "observations": "Macaronesia, N. Africa to Mauritania, Temp. Eurasia",
+      "vegetable": false,
+      "links": {
+          "self": "/api/v1/plants/plantago-lanceolata",
+          "species": "/api/v1/plants/plantago-lanceolata/species",
+          "genus": "/api/v1/genus/plantago"
+      },
+      "main_species": {
+          "id": 167888,
+          "common_name": "Narrowleaf plantain",
+          "slug": "plantago-lanceolata",
+          "scientific_name": "Plantago lanceolata",
+          "year": 1753,
+          "bibliography": "Sp. Pl.: 113 (1753)",
+          "author": "L.",
+          "status": "accepted",
+          "rank": "species",
+          "family_common_name": "Plantain family",
+          "genus_id": 5418,
+          "observations": "Macaronesia, N. Africa to Mauritania, Temp. Eurasia",
+          "vegetable": false,
+          "image_url": "https://bs.plantnet.org/image/o/78a8374f009e6ed2dc71ca17d18e4271ea0a2a7b",
+          "genus": "Plantago",
+          "family": "Plantaginaceae",
+          "duration": null,
+          "edible_part": null,
+          "edible": false
+      }
+  }
+}
