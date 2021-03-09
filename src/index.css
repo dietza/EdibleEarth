@@ -2,16 +2,26 @@
   font-family: 'Monserrat',
   sans-serif;
   text-decoration: none;
-  color: white;
-  background-color: grey;
+  background-color: transparent;
 }
 
 html {
+  background-attachment: fixed;
+  background-image: url('../src/assets/horiz-background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin: none;
+  padding: none;
   margin: 0;
 }
 
 body {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
 }
 
@@ -19,4 +29,28 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+h1, 
+h2, 
+h3, 
+p {
+  background-color: transparent;
+}
+
+.loading {
+  align-self: center;
+  background-color: rgba(1, 65, 64, 0.5);
+  color: whitesmoke;
+  font-weight: 500;
+  border: 2pt solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    background-image: url('../src/assets/vert-background.jpg');
+  }
 }

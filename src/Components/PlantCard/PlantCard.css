@@ -10,18 +10,35 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.75);
   color: #014140;
-  border: 2pt solid #014140;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-size: 16px;
+  /* border: 2pt solid black; */
   border-radius: 1rem;
   margin: .5rem;
   padding: 1rem;
 }
 
+.plant-card:hover {
+  box-shadow: 0 5px 15px rgba(1, 65, 64, 0.5);
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
 .card-details {
+  width: 14rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   color: #014140;
-  border: 2pt solid #014140;
+  border: 0.5pt solid #014140;
   border-radius: 1rem;
+  padding: .5rem;
 }
 
 .plant-card-image {

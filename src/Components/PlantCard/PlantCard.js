@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './PlantCard.css';
 
 const PlantCard = ({ info }) => {
@@ -21,8 +21,8 @@ const PlantCard = ({ info }) => {
   )
 }
 
-// PlantCard.propTypes = {
-
-// }
+PlantCard.propTypes = {
+  info: PropTypes.object
+}
 
 export default PlantCard;

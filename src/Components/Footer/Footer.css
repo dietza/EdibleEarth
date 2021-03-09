@@ -1,4 +1,56 @@
-footer {
-  border: 2pt solid black;
+footer {  
+  width: 100vw;
+  max-height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #014140;
+  margin-top: 3rem;
   padding: 1rem;
+}
+
+a {
+  max-width: 20rem;
+}
+
+button { 
+  width: 12rem;
+  max-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(1, 65, 64, 0.6);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-size: 16px;
+  color: whitesmoke;
+  border: 2pt solid black;
+  border-radius: 5rem;
+  margin-left: .5rem;
+  padding: 0.5rem;
+}
+
+button:focus {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  border-radius: 0.35rem;
+}
+
+.button:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  border-radius: 0.35rem;
+}
+
+.right-arrow-icon {
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: .5rem;
 }

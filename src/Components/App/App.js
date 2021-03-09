@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import MainHeading from '../MainHeading/MainHeading';
-import SearchBar from '../SearchBar/SearchBar';
 import Footer from '../Footer/Footer';
 import Container from '../Container/Container';
-import PlantCard from '../PlantCard/PlantCard';
 import PlantDetails from '../PlantDetails/PlantDetails';
-import './App.css';
 import { fetchAllPlantsByPage } from '../../fetchAPI';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
+      pageNum: 1,
       allPlants: [],
       ediblePlants: [],
       filteredPlants: [],
@@ -23,10 +21,31 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetchAllPlantsByPage(1)
+    this.fetchPlantsByPage();
+  }
+
+  fetchPlantsByPage = () => {
+    let pageNum = this.state.pageNum;
+    return fetchAllPlantsByPage(pageNum)
       .then(plants => this.setState({ allPlants: plants.data, isLoading: false }))
       .catch(error => this.setState({ error: `Uh oh! There was an error - 
       ${error}. Please try again!` }))
+  }
+  
+  updatePage = () => {
+    let pageNum = this.state.pageNum;
+    this.setState({
+      pageNum: pageNum + 1
+    })
+    this.fetchPlantsByPage();
+  }
+
+  resetToPreviousPage = () => {
+    let pageNum = this.state.pageNum;
+    this.setState({
+      pageNum: pageNum - 1
+    })
+    this.fetchPlantsByPage();
   }
 
   filterPlants = (searchTerm) => {
@@ -39,6 +58,19 @@ class App extends Component {
     this.setState({
       filteredPlants: filteredPlants,
     })
+
+    if (searchTerm === '') {
+      this.setState({
+        filteredPlants: [],
+      })
+    }
+  }
+
+  switchView = (targetPlantID) => {
+    this.setState({
+      selectedPlantID: targetPlantID,
+      filteredPlants: []
+     })
   }
 
   render = () => {
@@ -60,18 +92,28 @@ class App extends Component {
 ​                </>) :
                (<Container 
                allPlants={this.state.allPlants}
-               filteredPlants={this.state.filteredPlants}/>)
+               filteredPlants={this.state.filteredPlants}
+               />)
              }}
            />
-​          <Route path='/:id' 
-           render = {( {match} ) => { 
-             return (
-             <PlantDetails />
-               )
-           }}/>
+
+          <Route path='/:id' 
+            render={( {match} ) => { 
+              return (
+              <PlantDetails 
+              selectedPlantID={match.params.id}
+              switchView={this.switchView}
+              />)
+            }}/>
+
 ​        </Switch>
 
-      <Footer />
+      {!this.state.isLoading && 
+        !this.state.error && 
+        <Footer 
+        updatePage={ this.updatePage }
+        resetPage={ this.resetToPreviousPage }
+        switchView={this.switchView}/>}
 
       </main>
     );
