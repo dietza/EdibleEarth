@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route }from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './MainHeading.css';
 import SearchBar from '../SearchBar/SearchBar';
 
@@ -17,8 +17,8 @@ const MainHeading = ({ filterPlants }) => {
   )
 }
 
-// MainHeading.propTypes = {
-
-// }
+MainHeading.propTypes = {
+  filterPlants: PropTypes.func
+}
 
 export default MainHeading;

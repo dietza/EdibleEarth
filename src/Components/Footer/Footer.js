@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './Footer.css';
 import backArrow from '../../assets/return.png';
 import forwardArrow from '../../assets/right-arrow.png';
@@ -31,8 +31,10 @@ const Footer = ({ updatePage, resetPage, switchView }) => {
   )
 }
 
-// Footer.propTypes = {
-
-// }
+Footer.propTypes = {
+  updatePage: PropTypes.func,
+  resetPage: PropTypes.func,
+  switchView: PropTypes.func
+}
 
 export default Footer;

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './PlantDetails.css';
-import backArrow from '../../assets/return.png';
+import defaultImg from '../../assets/vert-background.jpg';
 import { fetchPlantDetails } from '../../fetchAPI';
 
 class PlantDetails extends Component {
@@ -39,22 +38,23 @@ class PlantDetails extends Component {
   }
 
   render() {
+    const brokenLinks = [
+      'https://bs.floristic.org/image/o/d2747c12a135a00ff8e6d8af86acbec3c6f8248d'
+    ];
+    const defaultImgSrc = defaultImg;
+    const checkImgSrc = this.state.plantToDisplay.image_url;
+    let imageSrc;
+
+    if (brokenLinks.includes(checkImgSrc)) {
+      imageSrc = defaultImgSrc;
+    }
+
     const plantCommonName = this.state.plantToDisplay.common_name;
     const scientificName = this.state.plantToDisplay.scientific_name;
-    const imageSrc = this.state.plantToDisplay.image_url;
+    imageSrc = this.state.plantToDisplay.image_url;
 
     return (
-      <>
-        {/* <Link to='/' className='details__back-to-home-button'>
-          <button className='details__back-to-home-button' onClick={this.clearID}>
-          <img src={backArrow} alt='back arrow icon'
-          className="return-arrow-icon"/>
-          {'Home View'}
-          </button>
-        </Link> */}
-
       <section>
-
         {this.state.error !== "" && 
         <>
           <h2 className="error-message">{this.state.error}</h2>
@@ -81,7 +81,6 @@ class PlantDetails extends Component {
           </section>          
 
           <section className="details__plant-specs">
-
             <h2 className="details__plant-common-name">{`${plantCommonName}`}</h2>
             <p className="details__plant-scientific-name">{`${scientificName}`}</p>
           </section>
@@ -90,18 +89,15 @@ class PlantDetails extends Component {
           className="details__plant-card-image"
           />
         </section>
-        
         }
-        
       </section>
-
-      </>
     )
   }
 }
 
-// PlantDetails.propTypes = {
-
-// }
+PlantDetails.propTypes = {
+  selectedPlantID: PropTypes.number.isRequired,
+  switchView: PropTypes.func.isRequired
+}
 
 export default PlantDetails;

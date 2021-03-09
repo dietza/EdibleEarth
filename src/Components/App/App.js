@@ -4,7 +4,6 @@ import MainHeading from '../MainHeading/MainHeading';
 import Footer from '../Footer/Footer';
 import Container from '../Container/Container';
 import PlantDetails from '../PlantDetails/PlantDetails';
-import './App.css';
 import { fetchAllPlantsByPage } from '../../fetchAPI';
 
 class App extends Component {
@@ -111,8 +110,6 @@ class App extends Component {
 
       {!this.state.isLoading && 
         !this.state.error && 
-        this.state.allPlants.length > 1 &&
-        this.state.filteredPlants.length === 0 &&
         <Footer 
         updatePage={ this.updatePage }
         resetPage={ this.resetToPreviousPage }
