@@ -32,6 +32,7 @@ Data used in this project was accessed from the [Trefle API](https://trefle.io/)
 ## Challenges
 - The API I chose to use for this project offered a wealth of data, but some hurdles in accessing it. I chose to build out my own backend express server, but this is essentially still making calls to the external API and populating the data through that service. While this helped me avoid any issues with cors, and I did not run into call limits in working with the API, each GET request made to the database retrieves 20 plant data points per call. Functionality is incorporated through buttons to update the page forward and back, displaying the respective batch of fetched plants data. I believe that using `Pagination` through React would likely be a more elegant solution, and replacing the current methods with that cleaner functionality is a goal for future iterations.
 - Further, the target data for the project was the boolean value stating whether each plant is edible or not. Because that specific data point was more deeply nested, the original MVP for this project was adjusted by the decision to make fewer API calls on the initial page load. While The plants are not currently filtered by their edible-status on the initial display, finding an efficient means to do so is another goal for future iterations. To balance this solution, the declaration of whether or not the selected plant is considered edible is prominently displayed as the top of the screen when viewing its details.
+- Even still, it appears that data in the api may not be completely reliable - there are some plants one would expect to be listed as edible (plantains and strawberries for example _should_ be fine), but the information in the database reflects that the plants are not edible. I wonder if a further resource did not have accurate information for these properties for some plants? With more time or in future iterations, I would prefer to supplement this data to make it more complete and accurate.
 
 ## Wins
 - While `Pagination` is not yet incorporated, finding a workable solution to making the API calls by each page and updating that to display effectively felt like a successful answer to the challenge of the API's request settings.
@@ -54,6 +55,7 @@ Data used in this project was accessed from the [Trefle API](https://trefle.io/)
 - further details displayed per plant pages, inc edible parts
 - adding ability to save plants after viewing details
 - link to medicinal uses
+- supplement data
 
 ## Authors
 This project was designed and implemented by [Allison Dietz](https://github.com/dietza)
