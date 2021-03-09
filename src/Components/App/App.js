@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import MainHeading from '../MainHeading/MainHeading';
-import SearchBar from '../SearchBar/SearchBar';
 import Footer from '../Footer/Footer';
 import Container from '../Container/Container';
-import PlantCard from '../PlantCard/PlantCard';
 import PlantDetails from '../PlantDetails/PlantDetails';
 import './App.css';
 import { fetchAllPlantsByPage } from '../../fetchAPI';
@@ -39,6 +37,13 @@ class App extends Component {
     let pageNum = this.state.pageNum;
     this.setState({
       pageNum: pageNum + 1
+    })
+    this.fetchPlantsByPage();
+  }
+
+  resetPage = () => {
+    this.setState({
+      pageNum: 1
     })
     this.fetchPlantsByPage();
   }
@@ -87,15 +92,18 @@ class App extends Component {
 ​                </>) :
                (<Container 
                allPlants={this.state.allPlants}
-               filteredPlants={this.state.filteredPlants}/>)
+               filteredPlants={this.state.filteredPlants}
+               />)
              }}
            />
 
           <Route path='/:id' 
             render={( {match} ) => { 
-              return <PlantDetails 
+              return (
+              <PlantDetails 
               selectedPlantID={match.params.id}
-              switchView={this.switchView}/>
+              switchView={this.switchView}
+              />)
             }}/>
 
 ​        </Switch>
@@ -104,8 +112,10 @@ class App extends Component {
         !this.state.error && 
         this.state.allPlants.length > 1 &&
         this.state.filteredPlants.length === 0 &&
-        this.state.selectedPlantID === null &&
-        <Footer updatePage={ this.updatePage }/>}
+        <Footer 
+        updatePage={ this.updatePage }
+        resetPage={ this.resetPage }
+        switchView={this.switchView}/>}
 
       </main>
     );

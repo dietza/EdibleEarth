@@ -45,13 +45,13 @@ class PlantDetails extends Component {
 
     return (
       <>
-        <Link to='/' className='back-to-home-btn'>
-          <button className='back-to-home-btn' onClick={this.clearID}>
+        {/* <Link to='/' className='details__back-to-home-button'>
+          <button className='details__back-to-home-button' onClick={this.clearID}>
           <img src={backArrow} alt='back arrow icon'
           className="return-arrow-icon"/>
           {'Home View'}
           </button>
-        </Link>
+        </Link> */}
 
       <section>
 
