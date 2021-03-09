@@ -96,7 +96,7 @@ class PlantDetails extends Component {
 }
 
 PlantDetails.propTypes = {
-  selectedPlantID: PropTypes.number.isRequired,
+  selectedPlantID: PropTypes.string.isRequired,
   switchView: PropTypes.func.isRequired
 }
 
