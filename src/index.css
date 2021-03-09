@@ -11,6 +11,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  text-align: center;
   margin: none;
   padding: none;
   margin: 0;
@@ -35,6 +36,17 @@ h2,
 h3, 
 p {
   background-color: transparent;
+}
+
+.loading {
+  align-self: center;
+  background-color: rgba(1, 65, 64, 0.5);
+  color: whitesmoke;
+  font-weight: 500;
+  border: 2pt solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 5rem;
 }
 
 @media screen and (max-width: 600px) {

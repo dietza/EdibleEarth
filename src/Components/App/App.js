@@ -61,9 +61,10 @@ class App extends Component {
     }
   }
 
-  toggleSelection = (targetPlantID) => {
+  switchView = (targetPlantID) => {
     this.setState({
       selectedPlantID: targetPlantID,
+      filteredPlants: []
      })
   }
 
@@ -94,7 +95,7 @@ class App extends Component {
             render={( {match} ) => { 
               return <PlantDetails 
               selectedPlantID={match.params.id}
-              switchView={this.toggleSelection}/>
+              switchView={this.switchView}/>
             }}/>
 
 ​        </Switch>
