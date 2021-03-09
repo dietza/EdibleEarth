@@ -99,13 +99,12 @@ class App extends Component {
 
 ​        </Switch>
 
-
       {!this.state.isLoading && 
         !this.state.error && 
         this.state.allPlants.length > 1 &&
         this.state.filteredPlants.length === 0 &&
+        this.state.selectedPlantID === null &&
         <Footer updatePage={ this.updatePage }/>}
-      {/* <Footer updatePage={ this.updatePage }/> */}
 
       </main>
     );
