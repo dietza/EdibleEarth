@@ -50,7 +50,8 @@ Data used in this project was accessed from the [Trefle API](https://trefle.io/)
 
 ## Future Iterations
 - incorporate React Pagination
-- refactoring class components to use React Hooks 
+- improvements around accessibility and responsive design features
+- refactoring class components to use React Hooks
 - more immediate filtering to display edible plants on load
 - further details displayed per plant pages, inc edible parts
 - adding ability to save plants after viewing details
