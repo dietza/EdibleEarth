@@ -11,8 +11,6 @@ const Container = ({ allPlants, filteredPlants }) => {
   const createPlantCards = (plants) => {
 
     plantsToDisplay = plants.map(plant => {
-      const commonName = plant.common_name;
-      const plantClassName = ((commonName.toLowerCase()).split(' ')).join('-')
 
       return (
         <>
