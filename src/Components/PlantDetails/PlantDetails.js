@@ -81,7 +81,7 @@ class PlantDetails extends Component {
           </section>          
 
           <section className="details__plant-specs">
-            <h2 className="details__plant-common-name">{`${plantCommonName}`}</h2>
+            <h1 className="details__plant-common-name">{`${plantCommonName}`}</h1>
             <p className="details__plant-scientific-name">{`${scientificName}`}</p>
           </section>
           <img src={ imageSrc } 

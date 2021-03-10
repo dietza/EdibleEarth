@@ -5,7 +5,7 @@ import './Footer.css';
 import backArrow from '../../assets/return.png';
 import forwardArrow from '../../assets/right-arrow.png';
 
-const Footer = ({ updatePage, resetPage, switchView }) => {
+const Footer = ({ updatePage, resetPage, switchView, pageNum }) => {
 
   const returnToPreviousPage = () => {
     switchView(null)
@@ -13,7 +13,7 @@ const Footer = ({ updatePage, resetPage, switchView }) => {
   }
 
   return (
-    <footer className="footer">
+    <footer className="footer">    
       <Link to='/'>
         <button className='details__back-button' onClick={returnToPreviousPage}>
         <img src={backArrow} alt='back arrow icon'
@@ -21,12 +21,14 @@ const Footer = ({ updatePage, resetPage, switchView }) => {
         {'Previous Page'}
         </button>
       </Link>
-      <button className='details__next-button'
-        onClick={updatePage}>
-        {'Next Page'}
-        <img src={forwardArrow} alt='right arrow icon'
-          className="right-arrow-icon"/>
-      </button>
+      {/* <Link to={`/${(pageNum + 1)}`}> */}
+        <button className='details__next-button'
+          onClick={updatePage}>
+          {'Next Page'}
+          <img src={forwardArrow} alt='right arrow icon'
+            className="right-arrow-icon"/>
+        </button>
+      {/* </Link> */}
     </footer>
   )
 }

@@ -78,7 +78,7 @@ class App extends Component {
       <main>
         
       <MainHeading 
-      filterPlants={this.filterPlants}/>
+      filterPlants={ this.filterPlants }/>
 
       {this.state.isLoading && !this.state.error &&
       <h2 className="loading">Loading...</h2>}
