@@ -4,38 +4,25 @@ describe('EdibleEarth main view', () => {
 
   beforeEach(() => {
     cy
-    .fixture('mockPlantainData.json')
-    .then((mockPlantainData) => {
-      cy.intercept('GET', 'http://localhost:4000/plants/1', {
-        statusCode: 200,
-        delay: 100,
-        body: mockPlantainData
-      })
+      .fixture('mockPlantainData.json')
+      .then((mockPlantainData) => {
+        cy.intercept('GET', 'http://localhost:4000/plants/1', {
+          statusCode: 200,
+          delay: 100,
+          body: mockPlantainData
+        })
     })
 
     cy
-    .fixture('mockStrawberryData.json')
-    .then((mockStrawberryData) => {
-      cy.intercept('GET', 'http://localhost:4000/plants/2', {
-        statusCode: 200,
-        delay: 100,
-        body: mockStrawberryData
+      .fixture('mockStrawberryData.json')
+      .then((mockStrawberryData) => {
+        cy.intercept('GET', 'http://localhost:4000/plants/2', {
+          statusCode: 200,
+          delay: 100,
+          body: mockStrawberryData
+        })
       })
-    })
 
-    cy
-    .fixture('mockStrawberryData.json')
-    .then((mockStrawberryData) => {
-      cy.intercept('GET', 'http://localhost:4000/plant/137615', {
-        statusCode: 200,
-        delay: 100,
-        body: mockStrawberryData.strawberryData
-      })
-    .then(() => {
-      console.log('STRAWBERRY MOCK >>>', mockStrawberryData.strawberryData)
-    })
-    })
-    
     cy.visit(baseUrl)
   });
 
@@ -69,7 +56,6 @@ describe('EdibleEarth main view', () => {
 
   it ('Should route to the appropriate details page on card click', () => {
     cy
-
       .get('footer')
       .find('.details__next-button').click()
       .get('footer')
@@ -79,44 +65,18 @@ describe('EdibleEarth main view', () => {
       .get('#137615').click()
 
       .url().should('eq', `${baseUrl}137615`)
+
+      .get('.plant-details-view .details__plant-specs')
+      .find('.details__plant-common-name').should('contain', 'woodland strawberry')
+
+      .get('.plant-details-view .details__plant-specs')
+      .find('.details__plant-scientific-name').should('contain', 'Fragaria vesca')
+
+      .get('.plant-details-view .details__plant-safety')
+      .find('.details__not-edible').should('contain', 'NO, it is NOT considered SAFE to eat this plant.')
+
+      .get('footer')
+      .find('.details__back-button').click()
   });
-
-
-
-
-
-  // beforeEach(() => {
-  //   cy
-  //   .fixture('mockPlantainData.json')
-  //   .then((mockPlantainData) => {
-  //     cy.intercept('GET', 'http://localhost:4000/plants/1', {
-  //       statusCode: 200,
-  //       delay: 100,
-  //       body: mockPlantainData
-  //     })
-  //   })
-
-  //   cy
-  //   .fixture('mockStrawberryData.json')
-  //   .then((mockStrawberryData) => {
-  //     cy.intercept('GET', 'http://localhost:4000/plants/2', {
-  //       statusCode: 200,
-  //       delay: 100,
-  //       body: mockStrawberryData
-  //     })
-  //   })
-
-  //   cy
-  //   .fixture('mockStrawberryData.json')
-  //   .then((mockStrawberryData) => {
-  //     cy.intercept('GET', 'http://localhost:4000/plant/137615', {
-  //       statusCode: 200,
-  //       delay: 100,
-  //       body: mockStrawberryData.strawberryData
-  //     })
-  //   })
-    
-  //   cy.visit(`${baseUrl}/137615`)
-  // });
 
 })

@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom';
 import PlantCard from '../PlantCard/PlantCard';
 import './Container.css';
 
-const Container = ({ allPlants, filteredPlants, switchView }) => {
-
+const Container = ({ allPlants, filteredPlants }) => {
   let plantsToDisplay;
 
   const createPlantCards = (plants) => {
-
     plantsToDisplay = plants.map(plant => {
 
       return (
@@ -21,7 +19,6 @@ const Container = ({ allPlants, filteredPlants, switchView }) => {
           >
           <PlantCard 
             info={plant}
-            switchView={switchView}
           />
         </Link>
         </>
@@ -44,8 +41,7 @@ const Container = ({ allPlants, filteredPlants, switchView }) => {
 
 Container.propTypes = {
   allPlants: PropTypes.arrayOf(PropTypes.object),
-  filteredPlants: PropTypes.arrayOf(PropTypes.object),
-  switchView: PropTypes.func
+  filteredPlants: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default Container;

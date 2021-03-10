@@ -117,7 +117,7 @@ describe('EdibleEarth main view', () => {
 
       .get('footer')
       .find('.details__back-button').click()
-      .get('form .search-input[type=text]').clear()
+      .get('form .search-input[type=text]')
   });
 
 })
