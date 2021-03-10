@@ -22,7 +22,7 @@ const PlantCard = ({ info }) => {
 }
 
 PlantCard.propTypes = {
-  info: PropTypes.object,
+  info: PropTypes.object
 }
 
 export default PlantCard;
