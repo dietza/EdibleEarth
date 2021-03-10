@@ -8,7 +8,7 @@ const PlantCard = ({ info }) => {
   const imageSrc = info.image_url;
 
   return (
-    <article className='plant-card'>
+    <article className='plant-card' id={info.id} name={`${plantCommonName}-card`} aria-label={`${plantCommonName}-card`}>
       <section className="card-details">
         <h2 className="plant-common-name">{`${plantCommonName}`}</h2>
         <p className="plant-scientific-name">{`${scientificName}`}</p>

@@ -12,7 +12,6 @@ class App extends Component {
     this.state = {
       pageNum: 1,
       allPlants: [],
-      ediblePlants: [],
       filteredPlants: [],
       selectedPlantID: null,
       isLoading: true,

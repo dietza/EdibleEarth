@@ -26,9 +26,6 @@ class PlantDetails extends Component {
         })
       })
 
-      .then(() => console.log('plant details set in fetch >>>>', this.state.plantToDisplay))
-      .then(() => console.log('EDIBLE details set in fetch >>>>', this.state.isEdible))
-
       .catch(error => this.setState({ error: `Uh oh! There was an error - 
       ${error}. Please try again!` }))
   }
