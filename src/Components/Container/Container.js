@@ -18,7 +18,8 @@ const Container = ({ allPlants, filteredPlants }) => {
         <>
         <Link 
           to={`/${plant.id}`} 
-          className={`${plantClassName}-card`}
+          key={plant.id}
+          id={plant.id}
           >
           <PlantCard 
             info={plant}

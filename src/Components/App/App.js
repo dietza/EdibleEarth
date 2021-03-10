@@ -12,7 +12,6 @@ class App extends Component {
     this.state = {
       pageNum: 1,
       allPlants: [],
-      ediblePlants: [],
       filteredPlants: [],
       selectedPlantID: null,
       isLoading: true,
@@ -79,7 +78,7 @@ class App extends Component {
       <main>
         
       <MainHeading 
-      filterPlants={ this.filterPlants }/>
+      filterPlants={this.filterPlants}/>
 
       {this.state.isLoading && !this.state.error &&
       <h2 className="loading">Loading...</h2>}
