@@ -49,6 +49,7 @@ Data used in this project was accessed from the [Trefle API](https://trefle.io/)
 5. CSS
 
 ## Future Iterations
+- web deployment
 - incorporate React Pagination
 - improvements around accessibility and responsive design features
 - refactoring class components to use React Hooks
