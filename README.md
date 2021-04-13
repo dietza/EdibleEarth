@@ -46,7 +46,7 @@ Data used in this project was accessed from the [Trefle API](https://trefle.io/)
 2. React Router
 3. Cypress
 4. FetchAPI
-5. CSS
+5. HTML5, ES6 JavaScript, CSS3
 
 ## Future Iterations
 - web deployment
